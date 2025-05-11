@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Under Development</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      user-select: none;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      pointer-events: none;
+    }
+
+    h1 {
+      margin: 20px 0 10px;
+      font-size: 2rem;
+      color: #ccc;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="Currently (1).png" alt="Under Development" />
+    <h1>Under Development</h1>
+    <p>We're working on something awesome. Stay tuned.</p>
+  </div>
+
+  <script>
+    // Disable right click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Disable drag
+    document.addEventListener('dragstart', event => event.preventDefault());
+    document.addEventListener('drop', event => event.preventDefault());
+
+    // Block key combinations for inspect tools
+    document.onkeydown = function(e) {
+      if (
+        e.keyCode === 123 || // F12
+        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I/J
+        (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+      ) {
+        return false;
+      }
+    };
+  </script>
+</body>
+</html>

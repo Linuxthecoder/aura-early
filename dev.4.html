@@ -2,48 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Under Development</title>
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
-      overflow: hidden;
-      background: #000;
-      height: 100%;
-      user-select: none;
+      box-sizing: border-box;
     }
 
-    img {
-      width: 100vw;
+    body {
+      background-color: #0e0e11;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
       height: 100vh;
-      object-fit: cover;
-      pointer-events: none;
-      -webkit-user-drag: none;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      padding: 50px;
+      max-width: 1200px;
+      margin: auto;
+      z-index: 2;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    .logo-icon {
+      width: 30px;
+      height: 30px;
+      background-color: #15d2c2;
+      color: #0e0e11;
+      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    main h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    main h1 span {
+      display: block;
+      color: #ffffff;
+    }
+
+    .tag {
+      margin-top: 30px;
+      background: transparent;
+      border: 1px solid white;
+      color: white;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tag:hover {
+      background-color: white;
+      color: black;
+    }
+
+    .tagline {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #ddd;
+      font-style: italic;
+    }
+
+    .background-circle {
+      position: absolute;
+      right: -20%;
+      top: 10%;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, #15d2c2 0%, #0e0e11 60%);
+      border-radius: 50%;
+      z-index: 0;
+      opacity: 0.2;
     }
   </style>
 </head>
 <body>
-  <img src="Currently (2).png" alt="Under Development" />
-
-  <script>
-    // Disable right-click
-    document.addEventListener('contextmenu', event => event.preventDefault());
-
-    // Disable drag & drop
-    document.addEventListener('dragstart', event => event.preventDefault());
-    document.addEventListener('drop', event => event.preventDefault());
-
-    // Block inspect tools
-    document.onkeydown = function(e) {
-      if (
-        e.keyCode === 123 || // F12
-        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I/J
-        (e.ctrlKey && e.keyCode === 85) // Ctrl+U
-      ) {
-        return false;
-      }
-    };
-  </script>
+  <div class="container">
+    <header class="logo">
+      <div class="logo-icon">C</div>
+      <span class="logo-text">Nexora</span>
+    </header>
+    <main>
+      <h1><span>Currently</span><br>the website<br><span>is under development</span></h1>
+      <button class="tag">Nexora</button>
+      <p class="tagline"><em>We're working on something awesome. Stay tuned.</em></p>
+    </main>
+    <div class="background-circle"></div>
+  </div>
 </body>
 </html>

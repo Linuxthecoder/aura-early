@@ -10,56 +10,31 @@
       padding: 0;
       overflow: hidden;
       background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      height: 100%;
       user-select: none;
     }
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
     img {
-      max-width: 90%;
-      max-height: 80vh;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
       pointer-events: none;
-    }
-
-    h1 {
-      margin: 20px 0 10px;
-      font-size: 2rem;
-      color: #ccc;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #aaa;
+      -webkit-user-drag: none;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="Currently (1).png" alt="Under Development" />
-    <h1>Under Development</h1>
-    <p>We're working on something awesome. Stay tuned.</p>
-  </div>
+  <img src="Currently (2).png" alt="Under Development" />
 
   <script>
-    // Disable right click
+    // Disable right-click
     document.addEventListener('contextmenu', event => event.preventDefault());
 
-    // Disable drag
+    // Disable drag & drop
     document.addEventListener('dragstart', event => event.preventDefault());
     document.addEventListener('drop', event => event.preventDefault());
 
-    // Block key combinations for inspect tools
+    // Block inspect tools
     document.onkeydown = function(e) {
       if (
         e.keyCode === 123 || // F12
